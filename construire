@@ -1,0 +1,30 @@
+#! /bin/bash
+
+authors=$( git log --format='%aN' \
+         | sort -u \
+         | tr "\\n" "; ")
+sed -e "s|//AUTHORS//|${authors}|" META > META.generated
+
+files=$( find  textes/ -type f \
+               -not -name "*~" \
+               -not -name "*.swp" \
+       | sort -u)
+
+pandoc --standalone \
+       --self-contained \
+       --smart \
+       --normalize \
+       --from=markdown \
+       --to=html5 \
+       META.generated ${files} \
+       -o fables-informatiques.html
+pandoc --standalone \
+       --self-contained \
+       --smart \
+       --normalize \
+       --from=markdown \
+       --to=epub \
+       META.generated ${files} \
+       -o fables-informatiques.epub
+
+rm -f META.generated
