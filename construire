@@ -6,6 +6,7 @@ authors=$( git log --format='%aN' \
 sed -e "s|//AUTHORS//|${authors}|" META > META.generated
 
 files=$( find  textes/ -type f \
+               -not -name "README.md" \
                -not -name "*~" \
                -not -name "*.swp" \
        | sort -u)
@@ -18,6 +19,14 @@ pandoc --standalone \
        --to=html5 \
        META.generated ${files} \
        -o fables-informatiques.html
+pandoc --standalone \
+       --self-contained \
+       --smart \
+       --normalize \
+       --from=markdown \
+       --to=latex \
+       META.generated ${files} \
+       -o fables-informatiques.pdf
 pandoc --standalone \
        --self-contained \
        --smart \
