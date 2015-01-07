@@ -4,16 +4,22 @@ Fables Informatiques
 Les Fables Informatiques sont un recueil collectif de fables dont la morale
 traite de l'informatique, ou d'un sujet apparenté.
 
+Par exemple, prenons une notion connue en informatique :
+[le problème entre la chaise et le clavier](http://fr.wiktionary.org/wiki/entre_la_chaise_et_le_clavier).
+La fable correspondante ne doit pas parler d'informatique. Tous les termes
+techniques son bannis de l'histoire, qui doit être compréhensible par tous.
+Mais la fable doit permettre au lecteur de comprendre l'idée sous-jacente,
+en la nommant.
+
 Quel est le but ?
 -----------------
 
-Ces fables ont avant tout un but divertissant : il faut que leur lecture
+Ces fables ont avant tout un but divertissant. Il faut que leur lecture
 soit agréable, voire amusante. Elles doivent aussi avoir une morale ayant
 un rapport avec l'informatique.
 
 Commencez par lire [l'article Wikipedia](http://fr.wikipedia.org/wiki/Fable)
-sur les fables, et relisez
-[celles de La Fontaine](http://www.lesfables.fr/).
+sur les fables, et relisez [celles de La Fontaine](http://www.lesfables.fr/).
 
 Comment proposer une nouvelle fable ?
 -------------------------------------
@@ -23,7 +29,7 @@ nouvelle fable, il vous suffit de :
 
 * forker le dépôt (bouton `Fork` en haut à droite);
 * dans votre fork, d'ajouter un nouveau fichier contenant le texte de votre
-  fable;
+  fable, dans le dossier `textes`;
 * ne pas oublier de faire un `commit` et un `push`;
 * et bien entendu, de nous envoyer une `pull request`, afin que nous
   ajoutions votre contribution !
@@ -56,6 +62,6 @@ Comment construire un document avec toutes les fables ?
 -------------------------------------------------------
 
 Il vous suffit de lancer la commande `./construire`. Elle construit le
-recueil sous différents formats : PDF, epub, ...
+recueil sous différents formats : HTML, PDF, epub, ...
 Nous utilisons l'outil [pandoc](http://johnmacfarlane.net/pandoc/)
 pour créer ces documents. Veillez à l'installer !
